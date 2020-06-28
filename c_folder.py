@@ -20,7 +20,7 @@ def c_folder_windows(key):
             if all(k in current for k in KEY_COMBO):
                 print(f"{KEY_COMBO} working!")            
                 folder_name = input("Folder name: ")
-                parent_dirname = "C:/../../../"   #U/A/D/...   
+                parent_dirname = "C:/../../../"   #Location of where folder will go once created.   
                 path = os.path.join(parent_dirname, folder_name)
                 os.mkdir(path)
                 print(f'Directory {folder_name} created on {date_now}')       
