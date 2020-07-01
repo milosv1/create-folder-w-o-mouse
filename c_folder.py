@@ -14,13 +14,13 @@ date_now = datetime.datetime.now()
 
 
 def c_folder_windows(key):
-    if sys.platform.startswith("win32"): 
+    if sys.platform.startswith("win32") or sys.platform.startswith("darwin"): #check if platform is windows or macOS
         if key in KEY_COMBO:
             current.add(key)
             if all(k in current for k in KEY_COMBO):
                 print(f"{KEY_COMBO} working!")            
                 folder_name = input("Folder name: ")
-                parent_dirname = "C:/../../../"   #Location of where folder will go once created.   
+                parent_dirname = "C:/Users/Admin/Desktop/"   #Location of where folder will go once created.   
                 path = os.path.join(parent_dirname, folder_name)
                 os.mkdir(path)
                 print(f'Directory {folder_name} created on {date_now}')       
@@ -28,12 +28,12 @@ def c_folder_windows(key):
             listener.stop()
                 
                    
-def c_folder_mac():
-    if sys.platform.startswith("darwin"):
-        print("platform you're on is macOS")
-    else:
-         print("not macOS ")    
-         print(f"current plaform: {get_platform}")
+#def c_folder_mac():
+ #   if sys.platform.startswith("darwin"):
+  #      print("platform you're on is macOS")
+  #  else:
+  #       print("not macOS ")    
+  #       print(f"current plaform: {get_platform}")
 
 
 def on_release(key):
