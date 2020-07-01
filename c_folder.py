@@ -20,7 +20,7 @@ def c_folder_windows(key):
             if all(k in current for k in KEY_COMBO):
                 print(f"{KEY_COMBO} working!")            
                 folder_name = input("Folder name: ")
-                parent_dirname = "C:/Users/Admin/Desktop/"   #Location of where folder will go once created.   
+                parent_dirname = "C:/#/#/#/"   #Location of where folder will go once created.   
                 path = os.path.join(parent_dirname, folder_name)
                 os.mkdir(path)
                 print(f'Directory {folder_name} created on {date_now}')       
@@ -48,4 +48,4 @@ with keyboard.Listener(on_press=c_folder_windows, on_release=on_release) as list
 
 
 c_folder_windows(key='')   
-c_folder_mac()        
+#c_folder_mac()        
