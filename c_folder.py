@@ -20,12 +20,18 @@ def c_folder_windows(key):
             if all(k in current for k in KEY_COMBO):
                 print(f"{KEY_COMBO} working!")            
                 folder_name = input("Folder name: ")
-                parent_dirname = "C:/#/#/#/"   #Location of where folder will go once created.   
-                path = os.path.join(parent_dirname, folder_name)
-                os.mkdir(path)
-                print(f'Directory {folder_name} created on {date_now}')       
+                parent_dirname = "C:/U/A/D/"   #Location of where folder will go once created.   
+                is_dir = os.path.isdir(parent_dirname)
+                if is_dir is True and len(folder_name) >= 1:
+                    print("Path is True")
+                    path = os.path.join(parent_dirname, folder_name)
+                    os.mkdir(path)
+                    print(f'Directory {folder_name} created on {date_now}')  
+                else:
+                    print("Unable to proceed.")         
         if key == keyboard.Key.esc: #when folder name is entered, it will go here, when pressing esc it will close the program.
             listener.stop()
+            print(f"{key} pressed, Action stopped.")
                 
                    
 
