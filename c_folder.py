@@ -28,13 +28,6 @@ def c_folder_windows(key):
             listener.stop()
                 
                    
-#def c_folder_mac():
- #   if sys.platform.startswith("darwin"):
-  #      print("platform you're on is macOS")
-  #  else:
-  #       print("not macOS ")    
-  #       print(f"current plaform: {get_platform}")
-
 
 def on_release(key):
     try:
