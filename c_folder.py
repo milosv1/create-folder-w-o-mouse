@@ -15,21 +15,22 @@ date_now = datetime.datetime.now()
 
 def c_folder_windows(key):
     if sys.platform.startswith("win32") or sys.platform.startswith("darwin"): #check if platform is windows or macOS
+        print(f"Operating System: {get_platform}")
         if key in KEY_COMBO:
             current.add(key)
             if all(k in current for k in KEY_COMBO):
                 print(f"{KEY_COMBO} working!")            
                 folder_name = input("Folder name: ")
-                parent_dirname = "C:/U/A/D/"   #Location of where folder will go once created.   
+                parent_dirname = "C:/Users/Admin/Desktop/"   #Location of where folder will go when created.   
                 is_dir = os.path.isdir(parent_dirname)
                 if is_dir is True and len(folder_name) >= 1:
                     print("Path is True")
                     path = os.path.join(parent_dirname, folder_name)
                     os.mkdir(path)
-                    print(f'Directory {folder_name} created on {date_now}')  
+                    print(f'Folder {folder_name} created in {parent_dirname} on {date_now}')  
                 else:
                     print("Unable to proceed.")         
-        if key == keyboard.Key.esc: #when folder name is entered, it will go here, when pressing esc it will close the program.
+        if key == keyboard.Key.esc: 
             listener.stop()
             print(f"{key} pressed, Action stopped.")
                 
